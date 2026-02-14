@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walentynka</title>
+  <style>
+    :root {
+      --bg1: #ffd7e6;
+      --bg2: #ffb7d2;
+      --card: #fff7fb;
+      --accent: #e11d48;
+      --accent-dark: #be123c;
+      --text: #4a1530;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top, var(--bg1), var(--bg2));
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+    }
+
+    .scene {
+      perspective: 1400px;
+    }
+
+    .card {
+      width: min(92vw, 460px);
+      aspect-ratio: 4 / 3;
+      position: relative;
+      filter: drop-shadow(0 22px 30px rgba(92, 8, 34, 0.25));
+    }
+
+    .inside {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(111, 13, 47, 0.2);
+    }
+
+    .inside {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 14% 20%, rgba(255, 139, 173, 0.16), transparent 30%),
+        radial-gradient(circle at 82% 84%, rgba(255, 150, 187, 0.14), transparent 36%),
+        repeating-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.97) 0,
+          rgba(255, 255, 255, 0.97) 12px,
+          rgba(255, 240, 246, 0.98) 12px,
+          rgba(255, 240, 246, 0.98) 24px
+        );
+      border: 2px solid rgba(225, 29, 72, 0.15);
+      padding: 2rem 1.6rem;
+      display: grid;
+      gap: 1rem;
+      align-content: center;
+      text-align: center;
+    }
+
+    .inside::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px dashed rgba(225, 29, 72, 0.35);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    .inside h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      color: var(--accent-dark);
+    }
+
+    .inside p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .inside-hearts {
+      color: var(--accent);
+      font-size: 1.4rem;
+      letter-spacing: 0.3rem;
+    }
+
+    .ornaments {
+      font-size: 1.1rem;
+      color: rgba(190, 18, 60, 0.6);
+      letter-spacing: 0.2rem;
+    }
+
+    .signature {
+      margin-top: 0.2rem;
+      font-size: clamp(1.55rem, 4vw, 1.95rem);
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      color: #8a0f33;
+      text-align: right;
+      padding-right: 0.3rem;
+      transform: rotate(-4deg);
+    }
+
+    .inside::after {
+      content: "❤";
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      color: rgba(190, 18, 60, 0.6);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="scene">
+    <div class="card">
+      <div class="inside">
+        <h1>Walentynka</h1>
+        <div class="ornaments">❦ ❤ ❦</div>
+        <p>
+          Dla Ciebie — za Twój uśmiech, ciepło i wszystkie piękne chwile,
+          które sprawiają, że każdy dzień jest wyjątkowy.
+          <br />
+          Niech ten dzień będzie pełen miłości, bliskości i magii.
+        </p>
+        <div class="inside-hearts">❤ ❤ ❤</div>
+        <div class="signature">Michał</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
